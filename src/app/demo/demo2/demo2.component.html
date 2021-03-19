@@ -1,0 +1,17 @@
+<p>demo2 Event and attribut hinding</p>
+<p>la valeur du nombre est : {{ nombre }}</p>
+<button nbButton status="success" (click)="increase()" [disabled]="nombre >= 9">
+  +
+</button>
+<button nbButton status="danger" (click)="decrease()" [disabled]="nombre >= 0">
+  -
+</button>
+
+<!-- 
+    binding = lié
+    binding de propiété = {{nomPropiété}}
+    binding event = nom de l'évéenement
+    binding d'attribut = [nom de l'attiribut]
+    Binding d'attribut ici
+    disabled = pas en desous de 0 et pas au dessus de 9
+-->

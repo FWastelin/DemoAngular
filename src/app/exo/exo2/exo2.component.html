@@ -1,0 +1,34 @@
+<h3>Exo2 : Panier de courses</h3>
+
+<form [formGroup]="ajoutForm" (ngSubmit)="onSubmitCourse()">
+  <p>
+    <label>Ajout course: </label>
+    <input nbInput formControlName="course" />
+    <button nbButton type="submit" [disabled]="ajoutForm.invalid">
+      ajouter
+    </button>
+  </p>
+</form>
+<h3>Afficher la liste</h3>
+<ul>
+  <li *ngFor="let Ajout of listAjout; let i = index">
+    course {{ i + 1 }}: {{ Ajout.course }} {{ Ajout.quantity }}
+    <button
+      nbButton
+      status="success"
+      (click)="increase(i)"
+      [disabled]="listAjout[Ajout] >= 20"
+    >
+      +</button
+    >&nbsp;
+    <button
+      nbButton
+      status="danger"
+      (click)="decrease(i)"
+      [disabled]="listAjout[Ajout] == 0"
+    >
+      -</button
+    >&nbsp;
+    <button nbButton status="warning" (click)="deleteItem(i)">x</button>
+  </li>
+</ul>

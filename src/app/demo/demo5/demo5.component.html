@@ -1,0 +1,35 @@
+<p>demo5 directive</p>
+
+<h3>Structural directive</h3>
+<p>ngIf</p>
+<!-- le click est lié à l'évéenement toggle et montre le texte-->
+<nb-card>
+  <nb-card-header (click)="toggle()">
+    <nb-icon icon="arrow-down"></nb-icon>
+  </nb-card-header>
+  <nb-card-body *ngIf="isToggled"
+    >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora id, eos
+    totam assumenda, quaerat rerum fuga impedit dolor minus nihil voluptate
+    ducimus? Quos vitae soluta, incidunt error repellat quod!
+    Reprehenderit.</nb-card-body
+  >
+</nb-card>
+
+<p>ngFor</p>
+<ul>
+  <li
+    *ngFor="let item of list; let i = index; let pair = even"
+    [ngClass]="{ maClass: pair }"
+  >
+    {{ i }} - {{ item }}
+  </li>
+</ul>
+
+<p>ngSwitch</p>
+<input nbInput [(ngModel)]="maVariable" />
+<div [ngSwitch]="maVariable">
+  <div *ngSwitchCase="1">Pomme</div>
+  <div *ngSwitchCase="2">Fraise</div>
+  <div *ngSwitchCase="3">Mangue</div>
+  <div *ngSwitchDefault>Entre 1, 2 ou 3</div>
+</div>

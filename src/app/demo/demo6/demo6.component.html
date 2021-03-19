@@ -1,0 +1,7 @@
+<p>demo6 Services</p>
+
+<h3>Fake authentication</h3>
+<p>Démo injection dépendance + promise</p>
+<p *ngIf="authStatus">Vous étes connecté</p>
+<button nbButton (click)="signIn()" *ngIf="!authStatus">connecté</button>
+<button nbButton (click)="signIn()" *ngIf="authStatus">déconnecté</button>

@@ -1,0 +1,22 @@
+<p>exo1 works!</p>
+
+<p>le chrono est = {{ MonChrono }}</p>
+<button
+  nbButton
+  status="success"
+  (click)="starTime()"
+  [disabled]="startDisabled"
+>
+  start</button
+>&nbsp;
+<button
+  nbButton
+  status="warning"
+  (click)="stopTime()"
+  [disabled]="stopDisabled"
+>
+  stop</button
+>&nbsp;
+<button nbButton status="danger" (click)="reseTime()" [disabled]="restDisabled">
+  reset
+</button>

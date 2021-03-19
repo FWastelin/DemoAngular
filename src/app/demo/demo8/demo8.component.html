@@ -1,0 +1,24 @@
+<p>demo8 Formulaire</p>
+<!-- on va utiliser des formulaire réactif-->
+<h3>Afficher la liste des utilisateurs</h3>
+<a routerLink="./new-user">Nouvel Utilisateur</a>
+<ul>
+  <li *ngFor="let user of users">
+    <nb-card>
+      <nb-card-header>
+        {{ user.firstname }} {{ user.lastname }}
+      </nb-card-header>
+      <nb-card-body>
+        <p>email: {{ user.email }}</p>
+      </nb-card-body>
+      <!-- la liste des films est nullable donc conditionnel
+            ce qui va rendre l'affichage de mon footer conditionnel -->
+      <nb-card-footer *ngIf="user.films && user.films.length > 0">
+        <p>Films préféré</p>
+        <ul>
+          <li *ngFor="let films of user.films">{{ films }}</li>
+        </ul>
+      </nb-card-footer>
+    </nb-card>
+  </li>
+</ul>
